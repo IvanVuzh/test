@@ -8,7 +8,7 @@ import './index.css';
 import {
   SAMPLE_SERVER_BASE_URL
 } from './config';
-
+//
 function renderApp(credentials) {
   ReactDOM.render(
     <App credentials={credentials} />,
