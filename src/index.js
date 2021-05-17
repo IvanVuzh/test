@@ -1,17 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import '@opentok/client';
+
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import {
+  SAMPLE_SERVER_BASE_URL
+} from './config';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function renderApp(credentials) {
+  ReactDOM.render(
+    <App credentials={credentials} />,
+    document.getElementById('root')
+  );
+}
+
+
+  fetch(SAMPLE_SERVER_BASE_URL + '/session')
+    .then(data => data.json())
+    .then(renderApp)
+    .catch((err) => {
+      console.error('Failed to get session credentials', err);
+      alert('Failed to get opentok sessionId and token. Make sure you have updated the config.js file.');
+    });
+
