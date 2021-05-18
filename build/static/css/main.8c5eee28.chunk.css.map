@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,UACE,qBACF,CACA,eACE,UAAW,CACX,eACF,CACA,cACE,UACF,CACA,OACE,SACF","file":"main.8c5eee28.chunk.css","sourcesContent":["body, html {\n  background-color: gray;\n}\n.OT_subscriber {\n  float: left;\n  margin-left: 1em;\n}\n.OT_publisher {\n  float: left;\n}\n.error {\n  color: red;\n}"]}
